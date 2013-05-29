@@ -1,0 +1,34 @@
+!!! 5
+%html
+  %head{ prefix: "og: http://ogp.me/ns#" }
+    %meta{ charset: "utf-8" }
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
+    %meta{ name: "og:title", content: current_page.data.title || data.site.name }
+    %meta{ name: "og:site_name", content: data.site.name }
+    %meta{ name: "og:image", content: "https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420" }
+    %meta{ name: "og:type", content: "website" }
+    %title= current_page.data.title || data.site.name
+    = stylesheet_link_tag "all.css"
+    = stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css"
+    /[if lt IE 9]
+      = javascript_include_tag "html5shiv-printshiv.js"
+    /[if lt IE 8]
+      = stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome-ie7.min.css"
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          .brand Ruby LoCo
+          %ul.nav.nav-pills.pull-right
+            %li= link_to "Home", "/"
+
+    = yield
+
+    .footer.text-center.muted
+      %p
+        Ruby LoCo -
+        Copyright &copy;
+        = Time.now.year
+        All rights reserved.
+
+    = javascript_include_tag "all.js"
