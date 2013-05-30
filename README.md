@@ -1,4 +1,4 @@
-# Ruby LoCo website
+# Ruby LoCo Website [![Build Status](https://travis-ci.org/rubyloco/rubyloco.com.png?branch=master)](https://travis-ci.org/rubyloco/rubyloco.com)
 
 Rubyists of Loudoun County, VA. We meet the last Friday of every month, [please
 join us](http://rubyloco.com/).
