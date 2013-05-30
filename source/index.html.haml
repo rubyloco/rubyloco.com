@@ -1,2 +1,9 @@
 = image_tag "https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420", id: 'rubyloco-logo'
+
+%script#event-template{ type: 'text/x-handlebars-template' }
+  %li.event
+    %h2 {{name}}
+    %h3.date {{date}}
+    .description {{description}}
+
 %ul#events
