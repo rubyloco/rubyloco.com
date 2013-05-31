@@ -5,25 +5,19 @@ $iconWhiteSpritePath: ''
 
 @import compass
 @import colors
+@import typography
 
+/** Page Layout styles **/
 body
   padding-top: 60px
+  color: $text-color
+  font-family: $font-family
+  font-weight: $font-weight-normal
+  font-size: $font-size-normal
+
 @media (max-width: 979px)
   body
     padding-top: 0
-
-#rubyloco-logo
-  float: left
-#events
-  float: left
-  li
-    list-style: none
-  .date
-    display: block
-  .name
-    display: block
-  .description  
-    display: block
 
 .footer
   clear: left
@@ -43,3 +37,22 @@ a:visited
 
 a:hover
   color: $blue
+
+/** Page Styles **/
+#rubyloco-logo
+  float: left
+#events
+  float: left
+  li
+    list-style: none
+  .date
+    display: block
+  .name
+    display: block
+  .description  
+    display: block
+
+.callout
+  font-size: $font-size-small
+  font-weight: $font-weight-bold
+  text-align: center
