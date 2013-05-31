@@ -1,3 +1,14 @@
 .row-fluid
   = image_tag "https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420", id: 'rubyloco-logo', class: 'span4 offset1'
+
+  %script#event-template{ type: 'text/x-handlebars-template' }
+    %li.event
+      %h2 {{name}}
+      %h3.date {{date}}
+      .venue {{venue.name}}
+      %a {{event_url}}
+      .rsvp attending: {{yes_rsvp_count}}
+      .description {{description}}
+
   %ul#events.span5.offset1
+
