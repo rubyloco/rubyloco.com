@@ -40,7 +40,7 @@ $ open http://localhost:4567
 The site is hosted on GitHub pages. To publish:
 
 ```bash
-$ bundle exec middleman build --clean && middleman deploy
+$ bundle exec middleman build --clean && bundle exec middleman deploy
 ```
 
 This will build the site, create a new commit in the gh-pages branch, and
