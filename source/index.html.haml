@@ -1,6 +1,13 @@
 .row-fluid
   = image_tag "https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420", id: 'rubyloco-logo', class: 'span4 offset1'
 
+  %ul#events.span5.offset1
+
+.row-fluid
+  %h3 Sponsers
+  = link_to image_tag('stickermule.png', :height => '90', :width => '90'), 'http://stickermule.com'
+  = link_to image_tag('busyconf.png', :height => '90', :width => '90'), 'http://busyconf.com'
+
   %script#event-template{ type: 'text/x-handlebars-template' }
     %li.event
       %h2 {{name}}
@@ -9,6 +16,4 @@
       %a {{event_url}}
       .rsvp attending: {{yes_rsvp_count}}
       .description {{description}}
-
-  %ul#events.span5.offset1
 
