@@ -10,7 +10,8 @@ load_events = (response) ->
 
 append_li = (evt) ->
   eventDate = new Date(evt.time);
-  li = "<li class='event'>Date: " + eventDate + "Name: " + evt.name + "<span='description'>" + evt.description + "</span></li>"
+  eventDateDisplay = eventDate.getMonth() + "-" + eventDate.getDate() + "-" + eventDate.getFullYear()
+  li = "<li class='event'><span class='date'><strong>Date:</strong> " + eventDateDisplay + "</span> <span class='name'><strong>Name:</strong> " + evt.name + "</span> <span class='description'><strong>Description:</strong> " + evt.description + "</span></li>"
   $("#events").append(li)
 
 $ ->
