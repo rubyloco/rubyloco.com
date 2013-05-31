@@ -12,7 +12,8 @@ class EventsView
 
   add_event: (event) ->
     d = new Date(event.time)
-    event.date = d.getMonth() + "-" + d.getDate() + "-" + d.getFullYear()
+    t = d.getHours()+ ":" +  d.getMinutes()
+    event.date = d.getMonth() + "-" + d.getDate() + "-" + d.getFullYear() + " " + t
     event.description = new Handlebars.SafeString(event.description)
     $("#events").append @template(event)
 
