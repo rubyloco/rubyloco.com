@@ -31,24 +31,19 @@ $ bundle install --path vendor --local
 Run the middleman server in development.
 
 ```bash
-$ bundle exec middleman
-$ open http://localhost:4567
+$ rake
 ```
+
+This just runs `bundle exec middleman server` and opens http://localhost:4567
+in your default browser.
 
 ## Publishing
 
-The site is hosted on GitHub pages. To publish:
+The site is hosted on GitHub Pages. To publish, run:
 
 ```bash
-$ bundle exec middleman build --clean && bundle exec middleman deploy
+$ rake publish
 ```
 
 This will build the site, create a new commit in the gh-pages branch, and
 automatically push that branch to origin.
-
-## Some aliases to help with the middleman workflow
-
-```bash
-alias m="bundle exec middleman"
-alias mpublish="m build --clean && m deploy"
-```
