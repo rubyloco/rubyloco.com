@@ -24,7 +24,7 @@ approach in your development is recommended.
 ```bash
 $ git clone git@github.com:rubyloco/rubyloco.com.git
 $ cd rubyloco.com
-$ rbenv install `cat .ruby-version` # if you lack this ruby version
+$ cat .ruby-version | rbenv install # if you lack this ruby version
 $ bundle install --path vendor --local
 ```
 
