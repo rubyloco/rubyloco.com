@@ -1,0 +1,9 @@
+- name: Sticker Mule
+  image: stickermule.png
+  url: 'http://www.stickermule.com/unlock?ref_id=6020568601'
+- name: BusyConf
+  image: busyconf.png
+  url: 'http://busyconf.com'
+- name: CustomInk
+  image: customink_logo.jpg
+  url: 'http://www.customink.com'
