@@ -4,7 +4,7 @@ class EventsView
     @template = Handlebars.compile(@source)
 
   get_events: ->
-    url = "http://api.meetup.com/2/events/?group_id=1815773&status=upcoming&order=time&limited_events=False&desc=false&offset=0&format=json&page=200&fields=&sig_id=9228642&sig=f99269d939e056eee5ec9852160b9027f95dfd5f&callback=loadEvents"
+    url = "http://api.meetup.com//2/events/?group_id=8825222&status=upcoming&order=time&limited_events=False&desc=false&offset=0&format=json&page=200&fields=&sig_id=9228642&sig=7e9df3f8cdbe03c41cb42ee8aa90def04e71bf68&callback=loadEvents"
     $.ajax url,
         dataType: 'jsonp'
         success: (data) =>
