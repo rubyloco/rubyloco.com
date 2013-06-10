@@ -11,9 +11,15 @@ class EventsView
           @add_event event for event in data.results
 
   add_event: (event) ->
+    return unless @in_range(event.time)
+
     event.date = moment(event.time).format('MM/DD/YYYY h:mma')
     event.description = new Handlebars.SafeString(event.description)
     $("#events").append @template(event)
+
+  in_range: (time) ->
+    two_months = moment().add('months', 2).unix() * 1000
+    time < two_months
 
 $ ->
   events_view = new EventsView
