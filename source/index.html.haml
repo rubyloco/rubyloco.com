@@ -6,18 +6,18 @@
 
       <a href="https://twitter.com/ruby_loco" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ruby_loco</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    
+    %div.sponsors
+      %h3 Support Our Sponsors
+      = link_to image_tag('stickermule.png', :height => '90', :width => '90'),
+          'http://www.stickermule.com/unlock?ref_id=6020568601'
+
+      = link_to image_tag('busyconf.png', :height => '90', :width => '90'),
+          'http://busyconf.com'
+
+      = link_to image_tag('customink_logo.jpg', :height => '90', :width => '90'), 'http://www.customink.com'
 
   %ul#events.span5.offset1
-
-.row-fluid
-  %h3 Sponsors
-  = link_to image_tag('stickermule.png', :height => '90', :width => '90'),
-      'http://www.stickermule.com/unlock?ref_id=6020568601'
-
-  = link_to image_tag('busyconf.png', :height => '90', :width => '90'),
-      'http://busyconf.com'
-
-  = link_to image_tag('customink_logo.jpg', :height => '90', :width => '90'), 'http://www.customink.com'
 
   %script#event-template{ type: 'text/x-handlebars-template' }
     %li.event
