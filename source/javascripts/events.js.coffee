@@ -11,7 +11,7 @@ class EventsView
           @add_event event for event in data.results
 
   add_event: (event) ->
-    event.date = moment(event.time).format('MM/DD/YYYY h:mm a')
+    event.date = moment(event.time).format('MM/DD/YYYY h:mma')
     event.description = new Handlebars.SafeString(event.description)
     $("#events").append @template(event)
 
