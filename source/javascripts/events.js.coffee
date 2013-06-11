@@ -8,15 +8,15 @@ class EventsView
     $.ajax url,
         dataType: 'jsonp'
         success: (data) =>
-          @add_event event for event in data.results
+          @add_event(event) for event in data.results when @coming_soon(event.time)
 
   add_event: (event) ->
-    return unless moment(event.time).isBefore(moment().add('months', 2))
-
     event.date = moment(event.time).format('MM/DD/YYYY h:mma')
     event.description = new Handlebars.SafeString(event.description)
-
     $("#events").append @template(event)
+
+  coming_soon: (time) ->
+    moment(time).isBefore(moment().add('months', 2))
 
 $ ->
   events_view = new EventsView
