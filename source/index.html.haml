@@ -9,8 +9,7 @@
 
     %div.sponsors
       %h3 Support Our Sponsors
-      - data.sponsors.each do |sponsor|
-        = link_to image_tag(sponsor.image, :height => '90', :width => '90'), sponsor.url
+      %div#sponsors
 
   %ul#events.span5.offset1
 
@@ -23,3 +22,6 @@
       .rsvp attending: {{yes_rsvp_count}}
       .description {{description}}
 
+  %script#sponsor-template{ type: 'text/x-handlebars-template' }
+    %a{href: "{{url}}" } 
+      %img.sponsor{ src: "{{image_url}}"}
