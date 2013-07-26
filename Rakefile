@@ -11,9 +11,13 @@ end
 task(:sleep) { sleep 5 } # cheap hack to wait for middleman to start
 task :delayed_open => [:sleep, :open]
 
-desc "Builds the static site and publishes it to the gh-pages branch"
-task :publish do
+desc "Builds the static site"
+task :build do
   sh "bundle exec middleman build --clean"
+end
+
+desc "Builds the static site and publishes it to the gh-pages branch"
+task :publish => :build do
   sh "bundle exec middleman deploy"
 end
 task :deploy => :publish # alias
