@@ -2,13 +2,13 @@
 %html
   %head{ prefix: "og: http://ogp.me/ns#" }
     %meta{ charset: "utf-8" }
-    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
-    %meta{ name: "og:title", content: current_page.data.title || data.site.name }
-    %meta{ name: "og:site_name", content: data.site.name }
-    %meta{ name: "og:image", content: "https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420" }
-    %meta{ name: "og:type", content: "website" }
+    = meta_tag "width=device-width, initial-scale=1.0", name: "viewport"
+    = meta_tag current_page.data.title || data.site.name, name: "og:title"
+    = meta_tag data.site.name, name: "og:site_name"
+    = meta_tag "https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420", name: "og:image"
+    = meta_tag "website", name: "og:type"
     %title= current_page.data.title || data.site.name
-    %link{ rel: "icon", type: "image/png", href: "/images/favicon.png" }
+    = favicon_tag "/images/favicon.png", type: "image/png"
     = stylesheet_link_tag "all.css"
     = stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css"
     /[if lt IE 9]
