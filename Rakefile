@@ -13,12 +13,12 @@ task :delayed_open => [:sleep, :open]
 
 desc "Builds the static site"
 task :build do
-  sh "bundle exec middleman build --clean"
+  sh "bundle exec middleman build"
 end
 
-desc "Builds the static site and publishes it to the gh-pages branch"
-task :publish => :build do
-  sh "bundle exec middleman deploy"
+desc "Builds and publishes the static site to the configured deployment location"
+task :publish do
+  sh "bundle exec middleman deploy --build-before"
 end
 task :deploy => :publish # alias
 
