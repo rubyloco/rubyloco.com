@@ -15,12 +15,13 @@
 
   %script#event-template{ type: 'text/x-handlebars-template' }
     %li.event
-      %h2 {{name}}
-      %h3.date {{date}}
+      %a{ href: "{{event_url}}" }
+        %h2.name {{name}}
+      %date {{date}}
       .venue {{venue.name}}
-      %a{ href: "{{event_url}}" } {{event_url}}
-      .rsvp attending: {{yes_rsvp_count}}
       .description {{description}}
+      .rsvp attending: {{yes_rsvp_count}}
+      %a{ href: "{{event_url}}" } {{event_url}}
 
   %script#sponsor-template{ type: 'text/x-handlebars-template' }
     %a{href: "{{url}}" } 
