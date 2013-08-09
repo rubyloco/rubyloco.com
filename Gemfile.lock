@@ -57,6 +57,8 @@ GEM
       middleman-core (>= 3.0.0)
       net-sftp
       ptools
+    middleman-google-analytics (0.0.1)
+      middleman-core (>= 3.0.6)
     middleman-livereload (3.1.0)
       em-websocket (>= 0.2.0)
       middleman-core (>= 3.0.2)
@@ -115,6 +117,7 @@ DEPENDENCIES
   bootstrap-sass
   middleman
   middleman-deploy
+  middleman-google-analytics
   middleman-livereload
   middleman-syntax
   rake

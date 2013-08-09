@@ -67,13 +67,15 @@ configure :build do
   # Use relative URLs
   # activate :relative_assets
 
-  # Compress PNGs after build
-  # First: gem install middleman-smusher
-  # require "middleman-smusher"
-  # activate :smusher
+  activate :google_analytics do |ga|
+    ga.tracking_id = "UA-43076155-1"
+  end
+end
 
-  # Or use a different image path
-  # set :http_path, "/Content/images/"
+configure :development do
+  activate :google_analytics do |ga|
+    ga.tracking_id = false
+  end
 end
 
 set :markdown_engine, :redcarpet
