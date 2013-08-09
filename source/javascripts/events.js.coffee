@@ -12,7 +12,10 @@ class EventsView
 
   add_event: (event) ->
     event.date = moment(event.time).format('MM/DD/YYYY h:mma')
-    event.description = new Handlebars.SafeString(event.description.replace(/<img\ssrc.+">/, ''))
+    event.description = event.description.replace(/<img\ssrc.+">/, '')
+    event.description = new Handlebars.SafeString(event.description)
+
+
     $("#events").append @template(event)
 
   coming_soon: (time) ->
