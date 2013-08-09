@@ -46,12 +46,14 @@
       <ul class='span5 offset1' id='events'></ul>
       <script id='event-template' type='text/x-handlebars-template'>
         <li class='event'>
-          <h2>{{name}}</h2>
-          <h3 class='date'>{{date}}</h3>
+          <a href='{{event_url}}'>
+            <h2 class='name'>{{name}}</h2>
+          </a>
+          <date>{{date}}</date>
           <div class='venue'>{{venue.name}}</div>
-          <a href='{{event_url}}'>{{event_url}}</a>
-          <div class='rsvp'>attending: {{yes_rsvp_count}}</div>
           <div class='description'>{{description}}</div>
+          <div class='rsvp'>attending: {{yes_rsvp_count}}</div>
+          <a href='{{event_url}}'>{{event_url}}</a>
         </li>
       </script>
       <script id='sponsor-template' type='text/x-handlebars-template'>
