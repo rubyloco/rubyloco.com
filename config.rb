@@ -84,7 +84,3 @@ set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fence
 activate :livereload
 activate :directory_indexes
 activate :syntax
-
-activate :deploy do |deploy|
-  deploy.method = :git
-end
