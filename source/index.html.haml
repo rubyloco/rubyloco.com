@@ -1,28 +1,29 @@
 .row-fluid
-  %div.span5.offset1
+  %div.span3.offset1
     %div.main
-      = image_tag "https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420", id: 'rubyloco-logo'
-      %div.list-item-footer
+      %h1.logo Ruby LoCo
+      = image_tag "https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420", id: 'rubyloco-logo'  
       %div.callout
-        %p
+        %p#callout.justified
           #{data.site.name} is a group of rubyists based out of Loudoun County, Virginia.  We meet on the second Monday and the last Friday of every month.  Come on out and join us!
 
         %div.centered
           <a href="https://twitter.com/ruby_loco" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ruby_loco on twitter</a></p>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    %div.sponsors
-      %h3.list-header Support Our Sponsors
-      %div#sponsors
 
-  %div.list-block.span5
+  %div.list-block.span6
     %h3.list-header Upcoming Events
     %ul#events
+  %div.list-block.span1
+    %div#sponsors
 
   %script#event-template{ type: 'text/x-handlebars-template' }
     %li.event
-      %div.event-details
+      
+      %div.thumb.span1
         %a{ href: "{{event_url}}", class: "event-thumb" }
           %img{ src: "{{thumb_src}}" }
+      %div.event-details
         %a{ href: "{{event_url}}", class: "event-name" }
           %h2.name {{name}}
         %description {{description}}
