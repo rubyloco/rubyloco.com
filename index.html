@@ -45,16 +45,18 @@
       </div>
       <script id='event-template' type='text/x-handlebars-template'>
         <li class='event'>
-          <a class='event-thumb' href='{{event_url}}'>
-            <img src='{{thumb_src}}'>
-          </a>
           <div class='event-details'>
+            <a class='event-thumb' href='{{event_url}}'>
+              <img src='{{thumb_src}}'>
+            </a>
             <a class='event-name' href='{{event_url}}'>
               <h2 class='name'>{{name}}</h2>
             </a>
             <description>{{description}}</description>
             <div class='meta'>
-              when: {{date}} | where: {{venue.name}} | attending: {{yes_rsvp_count}}
+              <span>when: <strong>{{date}}</strong> |</span>
+              <span>where: <strong>{{venue.name}}</strong> |</span>
+              <span>attending: <strong>{{yes_rsvp_count}}</strong></span>
             </div>
           </div>
           <div class='list-item-footer'></div>
