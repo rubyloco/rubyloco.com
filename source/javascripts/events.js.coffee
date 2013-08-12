@@ -18,10 +18,17 @@ class EventsView
     event.description = new Handlebars.SafeString(event.description)
     event.venue = { name:'TBD' } if event.venue == undefined
     #event.venue_url = "http://maps.google.com/maps?q=" + event.venue.address_1 + "+" + event.venue.city + "+" + event.venue.country if event.venue.name != "TBD"
+    event.thumb_src = @thumb_src(event)
     $("#events").append @template(event)
 
   coming_soon: (time) ->
     moment(time).isBefore(moment().add('months', 2))
+
+  thumb_src: (event) ->
+    if event.name.indexOf("Lunch") > 0
+      "http://photos1.meetupstatic.com/photos/event/b/a/6/0/global_263987712.jpeg"
+    else
+      "http://photos3.meetupstatic.com/photos/event/b/f/9/c/global_246409052.jpeg"
 
 $ ->
   events_view = new EventsView
