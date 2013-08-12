@@ -20,12 +20,12 @@
   </head>
   <body>
     <div class='row-fluid'>
-      <div class='span5 offset1'>
+      <div class='span3 offset1'>
         <div class='main'>
+          <h1 class='logo'>Ruby LoCo</h1>
           <img id="rubyloco-logo" src="https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420" />
-          <div class='list-item-footer'></div>
           <div class='callout'>
-            <p>
+            <p class='justified' id='callout'>
               Ruby LoCo is a group of rubyists based out of Loudoun County, Virginia.  We meet on the second Monday and the last Friday of every month.  Come on out and join us!
             </p>
             <div class='centered'>
@@ -34,21 +34,22 @@
             </div>
           </div>
         </div>
-        <div class='sponsors'>
-          <h3 class='list-header'>Support Our Sponsors</h3>
-          <div id='sponsors'></div>
-        </div>
       </div>
-      <div class='list-block span5'>
+      <div class='list-block span6'>
         <h3 class='list-header'>Upcoming Events</h3>
         <ul id='events'></ul>
       </div>
+      <div class='list-block span1'>
+        <div id='sponsors'></div>
+      </div>
       <script id='event-template' type='text/x-handlebars-template'>
         <li class='event'>
-          <div class='event-details'>
+          <div class='thumb span1'>
             <a class='event-thumb' href='{{event_url}}'>
               <img src='{{thumb_src}}'>
             </a>
+          </div>
+          <div class='event-details'>
             <a class='event-name' href='{{event_url}}'>
               <h2 class='name'>{{name}}</h2>
             </a>
