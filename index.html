@@ -19,41 +19,45 @@
     <![endif]-->
   </head>
   <body>
-    <div class='navbar navbar-fixed-top'>
-      <div class='navbar-inner'>
-        <div class='container'>
-          <div class='brand'>Ruby LoCo</div>
-          <ul class='nav nav-pills pull-right'>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
     <div class='row-fluid'>
       <div class='span5 offset1'>
-        <img id="rubyloco-logo" src="https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420" />
-        <div class='callout'>
-          Ruby LoCo meets on the second Monday and the last Friday of every month. <p><a href="http://twitter.com/ruby_loco">Follow us</a> on Twitter for details
-          <a href="https://twitter.com/ruby_loco" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ruby_loco</a></p>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <div class='main'>
+          <img id="rubyloco-logo" src="https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420" />
+          <div class='list-item-footer'></div>
+          <div class='callout'>
+            <p>
+              Ruby LoCo is a group of rubyists based out of Loudoun County, Virginia.  We meet on the second Monday and the last Friday of every month.  Come on out and join us!
+            </p>
+            <div class='centered'>
+              <a href="https://twitter.com/ruby_loco" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ruby_loco on twitter</a></p>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
+          </div>
         </div>
         <div class='sponsors'>
-          <h3>Support Our Sponsors</h3>
+          <h3 class='list-header'>Support Our Sponsors</h3>
           <div id='sponsors'></div>
         </div>
       </div>
-      <ul class='span5' id='events'></ul>
+      <div class='list-block span5'>
+        <h3 class='list-header'>Upcoming Events</h3>
+        <ul id='events'></ul>
+      </div>
       <script id='event-template' type='text/x-handlebars-template'>
         <li class='event'>
-          <a href='{{event_url}}'>
-            <h2 class='name'>{{name}}</h2>
+          <a class='event-thumb' href='{{event_url}}'>
+            <img src='{{thumb_src}}'>
           </a>
-          <date>When: {{date}}</date>
-          <div class='venue'>Where: {{venue.name}}</div>
-          <div class='description'>{{description}}</div>
-          <div class='rsvp'>attending: {{yes_rsvp_count}}</div>
-          <a href='{{event_url}}'>{{event_url}}</a>
+          <div class='event-details'>
+            <a class='event-name' href='{{event_url}}'>
+              <h2 class='name'>{{name}}</h2>
+            </a>
+            <description>{{description}}</description>
+            <div class='meta'>
+              when: {{date}} | where: {{venue.name}} | attending: {{yes_rsvp_count}}
+            </div>
+          </div>
+          <div class='list-item-footer'></div>
         </li>
       </script>
       <script id='sponsor-template' type='text/x-handlebars-template'>
@@ -62,13 +66,18 @@
         </a>
       </script>
     </div>
-    <div class='footer text-center muted'>
-      <p>
-        Ruby LoCo -
-        Copyright &copy;
-        2013
-        All rights reserved.
-      </p>
+    <div class='navbar-fixed-bottom'>
+      <div class='container'>
+        <div class='footer text-center muted'>
+          <p>
+            Ruby LoCo -
+            Copyright &copy;
+            2013
+            All rights reserved.
+          </p>
+          <a class="nav" href="/about">About</a>
+        </div>
+      </div>
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js" type="text/javascript"></script>
     <script src="/javascripts/all.js" type="text/javascript"></script>
