@@ -1,28 +1,38 @@
 .row-fluid
   %div.span5.offset1
-    = image_tag "https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420", id: 'rubyloco-logo'
-    %div.callout
-      #{data.site.name} meets on the second Monday and the last Friday of every month. <p>#{link_to "Follow us", "http://twitter.com/ruby_loco"} on Twitter for details
+    %div.main
+      = image_tag "https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420", id: 'rubyloco-logo'
+      %div.list-item-footer
+      %div.callout
+        %p
+          #{data.site.name} is a group of rubyists based out of Loudoun County, Virginia.  We meet on the second Monday and the last Friday of every month.  Come on out and join us!
 
-      <a href="https://twitter.com/ruby_loco" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ruby_loco</a></p>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
+        %div.centered
+          <a href="https://twitter.com/ruby_loco" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ruby_loco on twitter</a></p>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     %div.sponsors
-      %h3 Support Our Sponsors
+      %h3.list-header Support Our Sponsors
       %div#sponsors
 
-  %ul#events.span5
+  %div.list-block.span5
+    %h3.list-header Upcoming Events
+    %ul#events
 
   %script#event-template{ type: 'text/x-handlebars-template' }
     %li.event
-      %a{ href: "{{event_url}}" }
-        %h2.name {{name}}
-      %date When: {{date}}
-      .venue Where: {{venue.name}}
-      .description {{description}}
-      .rsvp attending: {{yes_rsvp_count}}
-      %a{ href: "{{event_url}}" } {{event_url}}
+      %a{ href: "{{event_url}}", class: "event-thumb" }
+        %img{ src: "{{thumb_src}}" }
+      %div.event-details
+        %a{ href: "{{event_url}}", class: "event-name" }
+          %h2.name {{name}}
+        %description {{description}}
+        %div.meta
+          when: {{date}} | where: {{venue.name}} | attending: {{yes_rsvp_count}}
+      %div{ class: "list-item-footer"}
 
   %script#sponsor-template{ type: 'text/x-handlebars-template' }
     %a{href: "{{url}}" } 
       %img.sponsor{ src: "{{image_url}}"}
+
+-content_for(:nav) do
+  =link_to "About", "/about", :class => "nav"

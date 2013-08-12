@@ -16,22 +16,18 @@
     /[if lt IE 8]
       = stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome-ie7.min.css"
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          .brand Ruby LoCo
-          %ul.nav.nav-pills.pull-right
-            %li= link_to "Home", "/"
-            %li= link_to "About", "/about"
 
     = yield
 
-    .footer.text-center.muted
-      %p
-        Ruby LoCo -
-        Copyright &copy;
-        = Time.now.year
-        All rights reserved.
+    .navbar-fixed-bottom
+      .container
+        .footer.text-center.muted
+          %p
+            Ruby LoCo -
+            Copyright &copy;
+            = Time.now.year
+            All rights reserved.
+          = yield_content :nav
     = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"
     = javascript_include_tag "all.js"
     = google_analytics_tag
