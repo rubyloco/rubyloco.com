@@ -14,7 +14,7 @@ body
   font-family: $font-family
   font-weight: $font-weight-normal
   font-size: $font-size-normal
-  background-color: #E7E7E7
+  background-color: $light_gray
 
 @media (max-width: 979px)
   body
@@ -45,75 +45,66 @@ a:hover
   margin: auto
   width: 280px
   height: 280px
-  -moz-border-radius: 15px
-  border-radius: 15px
+  @include border_radius(15px)
   margin-bottom: 15px
 
 .footer
   clear: left
   p
     padding-top: 10px
-    color: #fff
+    color: $white
 .navbar-fixed-bottom
-  background-color: #2e3639
+  background-color: $dark_gray
 
 
 a.nav
   position: absolute
   bottom: -10px
   right: 0
-  color: #fff
-  z-index: 9999
+  color: $white
   cursor: pointer
   &:hover
-    color: #fff
+    color: $white
   &:visited
-    color: #fff
+    color: $white
 
 h3.list-header
-  color: #fff
-  background-color: #2e3639
+  color: $white
+  background-color: $dark_gray
   margin-bottom: 0
   margin-top: 0
   padding-left: 20px
-  font-weight: 500
-  font-size: 19px
+  font-weight: $font-weight-bold
+  font-size: $font-size-large
 .list-block
   float: left
   #events
-    padding: 5px 5px 0px 5px
     margin: 0
     padding: 0
     li
-      background-color: #FAFAFA
+      background-color: $off_white
       padding: 10px 20px
-      margin: 0px 0px 0px 0px
       list-style: none
-      color: #777777
-      display: block
+      color: $gray
       a.event-thumb
         float: left
         padding-top: 15px
         img
           width: 60px
           height: 60px
+          @include border_radius(15px)
       .event-details
         width: 410px
         margin-left: 20px
         float: left
-        font-size: 13px
+        font-size: $font-size-small
         .name
           display: block
-          color: black
+          color: $dark_gray
           margin: 0px
-          font-size: 15px
-          color: #2e3639
-        .meta
-          span
-            font-weight: bold
+          font-size: $font-size-normal
         .description  
           display: block
-          font-size: 13px
           margin: 0px
 .list-item-footer
   clear: left
@@ -124,7 +115,7 @@ h3.list-header
     border: none
 
 .main
-  background-color: #FAFAFA
+  background-color: $off_white
   padding: 20px 20px
   padding-top: 40px
   .callout, .sponsors
@@ -135,14 +126,13 @@ h3.list-header
       text-align: center
 
 .sponsors
-  background-color: #FAFAFA
+  background-color: $off_white
   h3
     text-align: center
   .sponsor
     width: 80px
     height: 70px
-    -moz-border-radius: 15px
-    border-radius: 15px
+    @include border_radius(15px)
     margin-left: 20px
     margin-bottom: 20px
     margin-top: 20px
