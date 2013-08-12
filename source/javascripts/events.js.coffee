@@ -9,6 +9,7 @@ class EventsView
         dataType: 'jsonp'
         success: (data) =>
           @add_event(event) for event in data.results when @coming_soon(event.time)
+          @remove_last_event_border()
 
   add_event: (event) ->
     event.date = moment(event.time).format('MM/DD/YYYY h:mma')
@@ -29,6 +30,9 @@ class EventsView
       "http://photos1.meetupstatic.com/photos/event/b/a/6/0/global_263987712.jpeg"
     else
       "http://photos3.meetupstatic.com/photos/event/b/f/9/c/global_246409052.jpeg"
+
+  remove_last_event_border: ->
+    $("#events li .list-item-footer").last().css('border','none');
 
 $ ->
   events_view = new EventsView
