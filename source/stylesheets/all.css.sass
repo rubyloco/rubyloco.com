@@ -49,31 +49,27 @@ a:hover
   margin-top: 20px
   margin-bottom: 15px
 
+.navbar-fixed-bottom
+  background-color: $dark_gray
+
 .footer
   +clearfix
   p
     padding-top: 10px
     color: $white
-.navbar-fixed-bottom
-  background-color: $dark_gray
-
 
 .nav
-  position: absolute
-  bottom: -10px
-  right: 0
+  float: right
   color: $white
+  padding: 10px
+  margin: 0
+  li
+    margin: 0 10px
   a
     color: $white
-    cursor: pointer
-    &:hover
-      color: $white
-    &:visited
-      color: $white
-    &.first
-      padding-right: 10px
-      margin-right: 10px
-      border-right: 1px solid $white
+    +unstyled-link
+  a:hover
+    background-color: transparent !important
 
 h3.list-header
   color: $white

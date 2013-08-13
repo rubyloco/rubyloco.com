@@ -37,13 +37,16 @@
 
     .navbar-fixed-bottom
       .container
-        .footer.text-center.muted
+        .footer
+          %ul.nav.inline
+            %li=link_to "Home", "/"
+            %li=link_to "About", "/about"
+            %li=link_to "Photos", "/photos"
           %p
             Ruby LoCo -
             Copyright &copy;
             = Time.now.year
             All rights reserved.
-          = yield_content :nav
 
     = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"
     = javascript_include_tag "all.js"
