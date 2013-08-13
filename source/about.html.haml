@@ -21,4 +21,6 @@
         %p= link_to member.twitter, "http://twitter.com/#{member.twitter}"
 
 -content_for(:nav) do
-  =link_to "Home", "/", :class => "nav"
+  .nav
+    =link_to "Photos", "/photos", :class => "first"
+    =link_to "Home", "/"

@@ -38,4 +38,6 @@
       %img.sponsor{ src: "{{image_url}}"}
 
 -content_for(:nav) do
-  =link_to "About", "/about", :class => "nav"
+  .nav
+    =link_to "Photos", "/photos", :class => "first"
+    =link_to "About", "/about"

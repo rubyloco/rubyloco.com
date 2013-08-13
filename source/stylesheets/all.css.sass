@@ -57,16 +57,22 @@ a:hover
   background-color: $dark_gray
 
 
-a.nav
+.nav
   position: absolute
   bottom: -10px
   right: 0
   color: $white
-  cursor: pointer
-  &:hover
+  a
     color: $white
-  &:visited
-    color: $white
+    cursor: pointer
+    &:hover
+      color: $white
+    &:visited
+      color: $white
+    &.first
+      padding-right: 10px
+      margin-right: 10px
+      border-right: 1px solid $white
 
 h3.list-header
   color: $white
@@ -148,3 +154,7 @@ h3.list-header
     background-color: $white
     @include border_radius($radius-size)
     margin-bottom: 20px
+
+#photos
+  img
+    margin: 5px

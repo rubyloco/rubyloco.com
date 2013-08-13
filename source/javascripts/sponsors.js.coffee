@@ -14,5 +14,6 @@ class SponsorsView
     $("#sponsors").append @template(sponsor)
 
 $ ->
-  sponsors_view = new SponsorsView
-  sponsors_view.get_sponsors()
+  if $("#sponsors").length > 0
+    sponsors_view = new SponsorsView
+    sponsors_view.get_sponsors()

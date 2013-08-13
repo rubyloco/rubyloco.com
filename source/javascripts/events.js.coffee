@@ -38,6 +38,7 @@ class EventsView
     $("#events li .list-item-footer").last().css('border','none');
 
 $ ->
-  events_view = new EventsView
-  events_view.get_events()
+  if $("#events").length > 0
+    events_view = new EventsView
+    events_view.get_events()
 

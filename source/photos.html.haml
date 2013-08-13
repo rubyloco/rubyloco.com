@@ -1,0 +1,12 @@
+.row-fluid
+
+  %div#photos.offset1
+
+  %script#photo-template{ type: 'text/x-handlebars-template' }
+    %a{href: "{{highres_link}}" } 
+      %img.photo{ src: "{{photo_link}}"}
+
+-content_for(:nav) do
+  .nav
+    =link_to "About", "/about", :class => "first"
+    =link_to "Home", "/"
