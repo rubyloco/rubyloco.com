@@ -86,45 +86,49 @@ h3.list-header
   font-size: $font-size-large
 .list-block
   float: left
-  #events
-    margin: 0
-    padding: 10px 0 0 0
+  .list-body
+    padding-bottom: $radius_size
     background-color: $off_white
-    li
-      background-color: $off_white
-      padding: 10px 20px
-      list-style: none
-      color: $gray
-      position: relative
-      .thumb
-        height: 100%
-        width: 70px
-        position: absolute
-        a.event-thumb
-          margin-right: 15px
-          min-height: 107px
-          img
-            width: 60px
-            height: 60px
-            @include border_radius($radius-size)
-      .event-details
-        float: left
-        font-size: $font-size-small
-        margin-left: 80px
-        .name
-          display: block
-          color: $dark_gray
-          margin: 0px
-          font-size: $font-size-normal
-          line-height: $line-height-normal
-        .meta
-          span
-            white-space: nowrap
-            strong
-              color: $dark_gray
-        .description  
-          display: block
-          margin: 0px
+    @include border-bottom-left-radius($radius-size)
+    @include border-bottom-right-radius($radius-size)
+  #events
+    ul
+      margin-left: 0
+      li
+        background-color: $off_white
+        padding: 10px 20px
+        list-style: none
+        color: $gray
+        position: relative
+        .thumb
+          height: 100%
+          width: 70px
+          position: absolute
+          a.event-thumb
+            margin-right: 15px
+            min-height: 107px
+            img
+              width: 60px
+              height: 60px
+              @include border_radius($radius-size)
+        .event-details
+          float: left
+          font-size: $font-size-small
+          margin-left: 80px
+          .name
+            display: block
+            color: $dark_gray
+            margin: 0px
+            font-size: $font-size-normal
+            line-height: $line-height-normal
+          .meta
+            span
+              white-space: nowrap
+              strong
+                color: $dark_gray
+          .description  
+            display: block
+            margin: 0px
 .list-item-footer
   clear: left
   width: 100%
@@ -149,12 +153,26 @@ h3.list-header
     font-size: $font-size-xlarge
 
 #sponsors
+  h4
+    padding: 0
+    margin: 0 0 20px 0
   .sponsor
     width: 80px
     background-color: $white
     @include border_radius($radius-size)
     margin-bottom: 20px
 
+#about
+  background-color: $white
+  padding: 20px
+  font-size: $font-size-small
+  p
+    font-size: $font-size-small
+
 #photos
+  background-color: $white
+  padding: 0 20px
+
   img
     margin: 5px
+    max-width: 47%

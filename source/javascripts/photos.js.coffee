@@ -4,7 +4,7 @@ class PhotosView
     @template = Handlebars.compile(@source)
 
   get_photos: ->
-    url = "http:\/\/api.meetup.com\/2\/photos\/?group_id=8825222&order=time&desc=True&offset=0&format=json&page=200&fields=&sig_id=9228642&sig=05f5138c0ffcee4bbbbd69a33edb6e591f6bcc0b&callback=loadPhotos"
+    url = "http://api.meetup.com/2/photos/?group_id=8825222&order=time&desc=True&offset=0&format=json&page=200&fields=&sig_id=9228642&sig=05f5138c0ffcee4bbbbd69a33edb6e591f6bcc0b&callback=loadPhotos"
     $.ajax url,
         dataType: 'jsonp'
         success: (data) =>
