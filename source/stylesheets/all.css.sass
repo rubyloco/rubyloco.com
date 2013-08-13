@@ -10,6 +10,7 @@ $iconWhiteSpritePath: ''
 /** Page Layout styles **/
 body
   padding-top: 40px
+  padding-bottom: 60px
   color: $text-color
   font-family: $font-family
   font-weight: $font-weight-normal
@@ -44,12 +45,12 @@ a:hover
   display: block
   margin: auto
   width: 280px
-  @include border_radius($radius-size)
+  +border_radius($radius-size)
   margin-top: 20px
   margin-bottom: 15px
 
 .footer
-  clear: left
+  +clearfix
   p
     padding-top: 10px
     color: $white
@@ -80,17 +81,17 @@ h3.list-header
   margin-bottom: 0
   margin-top: 0
   padding-left: 20px
-  @include border-top-left-radius($radius-size)
-  @include border-top-right-radius($radius-size)
+  +border-top-left-radius($radius-size)
+  +border-top-right-radius($radius-size)
   font-weight: $font-weight-bold
   font-size: $font-size-large
 .list-block
-  float: left
   .list-body
     padding-bottom: $radius_size
     background-color: $off_white
-    @include border-bottom-left-radius($radius-size)
-    @include border-bottom-right-radius($radius-size)
+    +border-bottom-left-radius($radius-size)
+    +border-bottom-right-radius($radius-size)
+    +clearfix
   #events
     ul
       margin-left: 0
@@ -100,6 +101,10 @@ h3.list-header
         list-style: none
         color: $gray
         position: relative
+        +clearfix
+        border-bottom: 1px solid #eaebeb
+        &.last
+          border: none
         .thumb
           height: 100%
           width: 70px
@@ -110,7 +115,7 @@ h3.list-header
             img
               width: 60px
               height: 60px
-              @include border_radius($radius-size)
+              +border_radius($radius-size)
         .event-details
           float: left
           font-size: $font-size-small
@@ -126,16 +131,9 @@ h3.list-header
               white-space: nowrap
               strong
                 color: $dark_gray
-          .description  
+          .description
             display: block
             margin: 0px
-.list-item-footer
-  clear: left
-  width: 100%
-  padding-top: 20px
-  border-bottom: 1px solid #eaebeb
-  &.last
-    border: none
 
 .main
   padding: 0px 20px
@@ -159,7 +157,7 @@ h3.list-header
   .sponsor
     width: 80px
     background-color: $white
-    @include border_radius($radius-size)
+    +border_radius($radius-size)
     margin-bottom: 20px
 
 #about

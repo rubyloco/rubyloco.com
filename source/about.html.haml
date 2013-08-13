@@ -1,6 +1,6 @@
-%div.list-block.span6
+.list-block.span6
   %h3.list-header About #{data.site.name}
-  %div#about.list-body
+  #about.list-body
     %article.intro
       %p
         #{data.site.name} was formed in 2012 to gather the great Ruby minds of Loudoun County.  We welcome all technologists, but focus our group on discussions relating to Ruby, Rails, JavaScript, and other related web disciplines.
@@ -17,9 +17,8 @@
         - data.members.each do |member|
           .member.span3
             = image_tag "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(member.email)}", class: 'img-circle'
-            %div= member.name
-            %div= link_to "@#{member.twitter}", "http://twitter.com/#{member.twitter}"
-      %div{ style: "clear: both;"}
+            .name= member.name
+            .twitter= link_to "@#{member.twitter}", "http://twitter.com/#{member.twitter}"
 
 -content_for(:nav) do
   .nav

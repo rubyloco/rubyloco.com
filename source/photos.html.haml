@@ -1,9 +1,9 @@
-%div.list-block.span6
+.list-block.span6
   %h3.list-header Photos
-  %div#photos.list-body
+  #photos.list-body
 
 %script#photo-template{ type: 'text/x-handlebars-template' }
-  %a{href: "{{highres_link}}" } 
+  %a{href: "{{highres_link}}" }
     %img.photo{ src: "{{photo_link}}"}
 
 -content_for(:nav) do

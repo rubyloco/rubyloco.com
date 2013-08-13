@@ -1,24 +1,21 @@
-%div.list-block.span6
+.list-block.span6
   %h3.list-header Upcoming Events
-  %div#events.list-body
+  #events.list-body
     %ul
-
 
 %script#event-template{ type: 'text/x-handlebars-template' }
   %li.event
-    
-    %div.thumb.span1
+    .thumb.span1
       %a{ href: "{{event_url}}", class: "event-thumb" }
         %img{ src: "{{thumb_src}}" }
-    %div.event-details
+    .event-details
       %a{ href: "{{event_url}}", class: "event-name" }
         %h2.name {{name}}
       %description {{description}}
-      %div.meta
+      .meta
         %span="when: <strong>{{date}}</strong> |"
         %span="where: <strong>{{venue.name}}</strong> |"
         %span="attending: <strong>{{yes_rsvp_count}}</strong>"
-    %div{ class: "list-item-footer"}
 
 -content_for(:nav) do
   .nav
