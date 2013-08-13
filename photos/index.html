@@ -19,46 +19,13 @@
     <![endif]-->
   </head>
   <body>
-    <div class='container'>
-      <section>
-        <article class='intro'>
-          <h1>
-            About Ruby LoCo
-          </h1>
-          <p>
-            Ruby LoCo was formed in 2012 to gather the great Ruby minds of Loudoun County.  We welcome all technologists, but focus our group on discussions relating to Ruby, Rails, JavaScript, and other related web disciplines.
-          </p>
-          <p>
-            Ruby LoCo meets twice a month.  We meet for hack night on the second Monday of each month at the <a href="http://www.busyconf.com">BusyConf</a> offices.  Ruby LoCo also meets for lunch and afternoon hacking on the last Friday of every month.
-          </p>
-          <p>
-            <a href="http://twitter.com/ruby_loco">Follow Us</a> on Twitter for details about our next hack night and meetup.
-          </p>
-        </article>
-      </section>
-      <h2>Organizers</h2>
-      <div class='row'>
-        <div class='member span2'>
-          <img class="img-circle" src="http://www.gravatar.com/avatar/cf989ae1f7ddd979f38b00ec033a0e7d" />
-          <p>Chris Mar</p>
-          <p><a href="http://twitter.com/cmar">cmar</a></p>
-        </div>
-        <div class='member span2'>
-          <img class="img-circle" src="http://www.gravatar.com/avatar/41e75ca920386f6949e2f9cc1714d71f" />
-          <p>Karle Durante</p>
-          <p><a href="http://twitter.com/karledurante">karledurante</a></p>
-        </div>
-        <div class='member span2'>
-          <img class="img-circle" src="http://www.gravatar.com/avatar/fb4f162316f089ed99225cfbc7f047db" />
-          <p>Ryan McGeary</p>
-          <p><a href="http://twitter.com/rmm5t">rmm5t</a></p>
-        </div>
-        <div class='member span2'>
-          <img class="img-circle" src="http://www.gravatar.com/avatar/83a9ea91315fa15a082e280761dcef28" />
-          <p>David Bock</p>
-          <p><a href="http://twitter.com/bokmann">bokmann</a></p>
-        </div>
-      </div>
+    <div class='row-fluid'>
+      <div class='offset1' id='photos'></div>
+      <script id='photo-template' type='text/x-handlebars-template'>
+        <a href='{{highres_link}}'>
+          <img class='photo' src='{{photo_link}}'>
+        </a>
+      </script>
     </div>
     <div class='navbar-fixed-bottom'>
       <div class='container'>
@@ -70,7 +37,7 @@
             All rights reserved.
           </p>
           <div class='nav'>
-            <a class="first" href="/photos">Photos</a>
+            <a class="first" href="/about">About</a>
             <a href="/">Home</a>
           </div>
         </div>
