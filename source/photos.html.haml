@@ -1,10 +1,10 @@
-.row-fluid
+%div.list-block.span6
+  %h3.list-header Photos
+  %div#photos.list-body
 
-  %div#photos.offset1
-
-  %script#photo-template{ type: 'text/x-handlebars-template' }
-    %a{href: "{{highres_link}}" } 
-      %img.photo{ src: "{{photo_link}}"}
+%script#photo-template{ type: 'text/x-handlebars-template' }
+  %a{href: "{{highres_link}}" } 
+    %img.photo{ src: "{{photo_link}}"}
 
 -content_for(:nav) do
   .nav

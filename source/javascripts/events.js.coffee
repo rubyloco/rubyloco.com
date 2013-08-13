@@ -21,7 +21,7 @@ class EventsView
     event.venue = { name:'TBD' } if event.venue == undefined
     #event.venue_url = "http://maps.google.com/maps?q=" + event.venue.address_1 + "+" + event.venue.city + "+" + event.venue.country if event.venue.name != "TBD"
     event.thumb_src = @thumb_src(event)
-    $("#events").append @template(event)
+    $("#events ul").append @template(event)
 
   coming_soon: (time) ->
     moment(time).isBefore(moment().add('months', 2))
