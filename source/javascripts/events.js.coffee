@@ -15,13 +15,13 @@ class EventsView
   add_event: (event) ->
     event.date = moment(event.time).format('MM/DD/YYYY h:mma')
     event.description = event.description.replace(/<img\ssrc.+"><\/img>/, '')
-    event.description = event.description.replace(/\<(\/)?p\>/g, '') 
+    event.description = event.description.replace(/\<(\/)?p\>/g, '')
     event.description = event.description.replace(/\<br(\s)?(\/)?\>/g, '')
     event.description = new Handlebars.SafeString(event.description)
     event.venue = { name:'TBD' } if event.venue == undefined
     #event.venue_url = "http://maps.google.com/maps?q=" + event.venue.address_1 + "+" + event.venue.city + "+" + event.venue.country if event.venue.name != "TBD"
     event.thumb_src = @thumb_src(event)
-    $("#events ul").append @template(event)
+    $("#events").append @template(event)
 
   coming_soon: (time) ->
     moment(time).isBefore(moment().add('months', 2))
@@ -41,4 +41,3 @@ $ ->
   if $("#events").length > 0
     events_view = new EventsView
     events_view.get_events()
-

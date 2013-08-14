@@ -27,12 +27,9 @@ section
 article
   margin: 0 0 25px
 
-a, a:visited, a:hover
+a
   color: $red
   text-decoration: none
-
-a:visited
-  color: $dark-red
 
 a:hover
   color: $blue
@@ -89,47 +86,40 @@ h3.list-header
     +border-bottom-right-radius($radius-size)
     +clearfix
   #events
-    ul
-      margin-left: 0
-      li
-        background-color: $off_white
-        padding: 10px 20px
-        list-style: none
-        color: $gray
-        position: relative
-        +clearfix
-        border-bottom: 1px solid #eaebeb
-        &.last
-          border: none
-        .thumb
-          height: 100%
-          width: 70px
-          position: absolute
-          a.event-thumb
-            margin-right: 15px
-            min-height: 107px
-            img
-              width: 60px
-              height: 60px
-              +border_radius($radius-size)
-        .event-details
-          float: left
-          font-size: $font-size-small
-          margin-left: 80px
-          .name
-            display: block
-            color: $dark_gray
-            margin: 0px
-            font-size: $font-size-normal
-            line-height: $line-height-normal
-          .meta
-            span
-              white-space: nowrap
-              strong
-                color: $dark_gray
-          .description
-            display: block
-            margin: 0px
+    .event
+      background-color: $off_white
+      padding: 10px 20px
+      list-style: none
+      color: $gray
+      +clearfix
+      border-bottom: 1px solid #eaebeb
+      &.last
+        border: none
+      a.rsvp
+        float: right
+      a.thumb
+        float: left
+        img
+          width: 100px
+          height: 100px
+          +border_radius($radius-size)
+      .event-details
+        font-size: $font-size-small
+        margin-left: 115px
+        .name
+          display: block
+          color: $dark_gray
+          margin: 0px
+          font-size: $font-size-normal
+          line-height: $line-height-normal
+        .meta
+          span
+            white-space: nowrap
+            strong
+              color: $dark_gray
+        .description
+          display: block
+          margin: 0px
 
 .main
   padding: 0px 20px

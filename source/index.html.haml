@@ -3,15 +3,17 @@
   %ul
 
 %script#event-template{ type: 'text/x-handlebars-template' }
-  %li.event
-    .thumb.span1
-      %a{ href: "{{event_url}}", class: "event-thumb" }
-        %img{ src: "{{thumb_src}}" }
+  .event
+    = link_to "{{event_url}}", class: "thumb" do
+      %img{ src: "{{thumb_src}}" }
     .event-details
-      %a{ href: "{{event_url}}", class: "event-name" }
-        %h2.name {{name}}
-      %description {{description}}
+      %a{ href: "{{event_url}}", class: "btn btn-primary rsvp" } RSVP
+      %h2.name
+        %a{ href: "{{event_url}}", class: "event-name" } {{name}}
+      .description {{description}}
       .meta
-        %span="when: <strong>{{date}}</strong> |"
-        %span="where: <strong>{{venue.name}}</strong> |"
-        %span="attending: <strong>{{yes_rsvp_count}}</strong>"
+        %span when: <strong>{{date}}</strong>
+        |
+        %span where: <strong>{{venue.name}}</strong>
+        |
+        %span attending: <strong>{{yes_rsvp_count}}</strong>
