@@ -10,7 +10,6 @@ class EventsView
         success: (data) =>
           $("#events").empty()
           @add_event(event) for event in data.results when @coming_soon(event.time)
-          @remove_last_event_border()
 
   add_event: (event) ->
     event.date = moment(event.time).format('MM/DD/YYYY h:mma')
