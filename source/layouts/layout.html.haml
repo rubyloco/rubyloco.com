@@ -17,7 +17,7 @@
       = stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome-ie7.min.css"
   %body
     .container
-      .row.row-fluid
+      .row
         .span3.summary
           %h1.text-center Ruby LoCo
           = image_tag "https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420", id: 'rubyloco-logo'
@@ -25,6 +25,10 @@
             #{data.site.name} is a group of rubyists based out of Loudoun County, Virginia.  We meet on the second Monday and the last Friday of every month.  Come on out and join us!
           .text-center
             = partial "layouts/twitter_button"
+            .copyright
+              Ruby LoCo -
+              Copyright &copy;
+              = Time.now.year
 
         .span7.list-block
           = yield
@@ -33,17 +37,11 @@
           #sponsors
             %h2 Sponsors
 
-    .navbar-fixed-bottom
-      .container
-        .footer
-          %ul.nav.inline
-            %li=link_to "Home", "/"
-            %li=link_to "About", "/about"
-            %li=link_to "Photos", "/photos"
-          %p.copyright
-            Ruby LoCo -
-            Copyright &copy;
-            = Time.now.year
+    .navbar-fixed-bottom.footer.text-center
+      %ul.nav.inline
+        %li=link_to "Home", "/"
+        %li=link_to "About", "/about"
+        %li=link_to "Photos", "/photos"
 
     = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"
     = javascript_include_tag "all.js"
