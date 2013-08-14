@@ -52,4 +52,4 @@
 
     %script#sponsor-template{ type: 'text/x-handlebars-template' }
       %a{href: "{{url}}" }
-        %img.sponsor{ src: "{{image_url}}"}
+        %img.sponsor{ src: "{{image_url}}", data: { toggle: "tooltip", placement: "left", html: "true" }, title: "<strong>{{name}}</strong><br>{{info}}" }
