@@ -16,41 +16,39 @@
     /[if lt IE 8]
       = stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome-ie7.min.css"
   %body
+    .container
+      .row.row-fluid
+        .span3.summary
+          %h1.text-center Ruby LoCo
+          = image_tag "https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420", id: 'rubyloco-logo'
+          %p.callout
+            #{data.site.name} is a group of rubyists based out of Loudoun County, Virginia.  We meet on the second Monday and the last Friday of every month.  Come on out and join us!
+          .text-center
+            = partial "layouts/twitter_button"
 
-    .row-fluid
-      %div.span3.offset1
-        %div.main
-          %h1.logo Ruby LoCo
-          = image_tag "https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420", id: 'rubyloco-logo'  
-          %div.callout
-            %p#callout.justified
-              #{data.site.name} is a group of rubyists based out of Loudoun County, Virginia.  We meet on the second Monday and the last Friday of every month.  Come on out and join us!
+        .span7.list-block
+          = yield
 
-            %div.centered
-              <a href="https://twitter.com/ruby_loco" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ruby_loco on twitter</a></p>
-              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-      
-      = yield
-
-      %div.list-block.span1
-        %div#sponsors
-          %h4 Sponsors
-
-      %div{ style: 'clear: both; display: block; height: 70px; width: 100%;'}
-
-    %script#sponsor-template{ type: 'text/x-handlebars-template' }
-      %a{href: "{{url}}" } 
-        %img.sponsor{ src: "{{image_url}}"}
+        .span2
+          #sponsors
+            %h2 Sponsors
 
     .navbar-fixed-bottom
       .container
-        .footer.text-center.muted
-          %p
+        .footer
+          %ul.nav.inline
+            %li=link_to "Home", "/"
+            %li=link_to "About", "/about"
+            %li=link_to "Photos", "/photos"
+          %p.copyright
             Ruby LoCo -
             Copyright &copy;
             = Time.now.year
-            All rights reserved.
-          = yield_content :nav
+
     = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"
     = javascript_include_tag "all.js"
     = google_analytics_tag
+
+    %script#sponsor-template{ type: 'text/x-handlebars-template' }
+      %a{href: "{{url}}" }
+        %img.sponsor{ src: "{{image_url}}", data: { toggle: "tooltip", placement: "left", html: "true" }, title: "<strong>{{name}}</strong><br>{{info}}" }

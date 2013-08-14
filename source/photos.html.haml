@@ -1,12 +1,8 @@
-%div.list-block.span6
-  %h3.list-header Photos
-  %div#photos.list-body
+%h3.list-header
+  %i.icon-camera-retro.icon-large.icon-fixed-width
+  Photos
+#photos.list-body
 
 %script#photo-template{ type: 'text/x-handlebars-template' }
-  %a{href: "{{highres_link}}" } 
-    %img.photo{ src: "{{photo_link}}"}
-
--content_for(:nav) do
-  .nav
-    =link_to "About", "/about", :class => "first"
-    =link_to "Home", "/"
+  %a{href: "{{highres_link}}" }
+    %img.photo{ src: "{{photo_link}}", data: { toggle: "tooltip", placement: "bottom", html: "true" }, title: "Uploaded on {{date}} by {{member.name}}" }

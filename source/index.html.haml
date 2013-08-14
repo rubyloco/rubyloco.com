@@ -1,26 +1,20 @@
-%div.list-block.span6
-  %h3.list-header Upcoming Events
-  %div#events.list-body
-    %ul
-
+%h3.list-header
+  %i.icon-bullhorn.icon-large.icon-fixed-width
+  Upcoming Events
+#events.list-body
 
 %script#event-template{ type: 'text/x-handlebars-template' }
-  %li.event
-    
-    %div.thumb.span1
-      %a{ href: "{{event_url}}", class: "event-thumb" }
-        %img{ src: "{{thumb_src}}" }
-    %div.event-details
-      %a{ href: "{{event_url}}", class: "event-name" }
-        %h2.name {{name}}
-      %description {{description}}
-      %div.meta
-        %span="when: <strong>{{date}}</strong> |"
-        %span="where: <strong>{{venue.name}}</strong> |"
-        %span="attending: <strong>{{yes_rsvp_count}}</strong>"
-    %div{ class: "list-item-footer"}
-
--content_for(:nav) do
-  .nav
-    =link_to "Photos", "/photos", :class => "first"
-    =link_to "About", "/about"
+  .event
+    = link_to "{{event_url}}", class: "thumb" do
+      %img{ src: "{{thumb_src}}" }
+    .event-details
+      %h2.name
+        %a{ href: "{{event_url}}", class: "event-name" } {{name}}
+      %a{ href: "{{event_url}}", class: "btn btn-primary rsvp" } RSVP
+      .description {{description}}
+      .meta
+        %span when: <strong>{{date}}</strong>
+        |
+        %span where: <strong>{{venue.name}}</strong>
+        |
+        %span attending: <strong>{{yes_rsvp_count}}</strong>

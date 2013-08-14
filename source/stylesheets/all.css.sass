@@ -10,6 +10,7 @@ $iconWhiteSpritePath: ''
 /** Page Layout styles **/
 body
   padding-top: 40px
+  padding-bottom: 90px
   color: $text-color
   font-family: $font-family
   font-weight: $font-weight-normal
@@ -26,12 +27,9 @@ section
 article
   margin: 0 0 25px
 
-a, a:visited, a:hover
+a
   color: $red
   text-decoration: none
-
-a:visited
-  color: $dark-red
 
 a:hover
   color: $blue
@@ -44,35 +42,33 @@ a:hover
   display: block
   margin: auto
   width: 280px
-  @include border_radius($radius-size)
+  +border_radius($radius-size)
   margin-top: 20px
   margin-bottom: 15px
 
-.footer
-  clear: left
-  p
-    padding-top: 10px
-    color: $white
 .navbar-fixed-bottom
   background-color: $dark_gray
 
+.footer
+  +clearfix
+  p
+    padding-top: 10px
+    color: $white
+  .copyright
+    color: #777
 
 .nav
-  position: absolute
-  bottom: -10px
-  right: 0
+  float: right
   color: $white
+  padding: 10px
+  margin: 0
+  li
+    margin: 0 10px
   a
     color: $white
-    cursor: pointer
-    &:hover
-      color: $white
-    &:visited
-      color: $white
-    &.first
-      padding-right: 10px
-      margin-right: 10px
-      border-right: 1px solid $white
+    +unstyled-link
+  a:hover
+    background-color: transparent !important
 
 h3.list-header
   color: $white
@@ -80,87 +76,71 @@ h3.list-header
   margin-bottom: 0
   margin-top: 0
   padding-left: 20px
-  @include border-top-left-radius($radius-size)
-  @include border-top-right-radius($radius-size)
+  +border-top-left-radius($radius-size)
+  +border-top-right-radius($radius-size)
   font-weight: $font-weight-bold
   font-size: $font-size-large
 .list-block
-  float: left
   .list-body
     padding-bottom: $radius_size
     background-color: $off_white
-    @include border-bottom-left-radius($radius-size)
-    @include border-bottom-right-radius($radius-size)
+    +border-bottom-left-radius($radius-size)
+    +border-bottom-right-radius($radius-size)
+    +clearfix
   #events
-    ul
-      margin-left: 0
-      li
-        background-color: $off_white
-        padding: 10px 20px
-        list-style: none
-        color: $gray
-        position: relative
-        .thumb
-          height: 100%
-          width: 70px
-          position: absolute
-          a.event-thumb
-            margin-right: 15px
-            min-height: 107px
-            img
-              width: 60px
-              height: 60px
-              @include border_radius($radius-size)
-        .event-details
-          float: left
-          font-size: $font-size-small
-          margin-left: 80px
-          .name
-            display: block
-            color: $dark_gray
-            margin: 0px
-            font-size: $font-size-normal
-            line-height: $line-height-normal
-          .meta
-            span
-              white-space: nowrap
-              strong
-                color: $dark_gray
-          .description  
-            display: block
-            margin: 0px
-.list-item-footer
-  clear: left
-  width: 100%
-  padding-top: 20px
-  border-bottom: 1px solid #eaebeb
-  &.last
-    border: none
+    .event
+      background-color: $off_white
+      padding: 10px 20px
+      list-style: none
+      color: $gray
+      +clearfix
+      border-bottom: 1px solid #eaebeb
+      &.last
+        border: none
+      a.rsvp
+        float: right
+      a.thumb
+        float: left
+        img
+          width: 100px
+          height: 100px
+          +border_radius($radius-size)
+      .event-details
+        font-size: $font-size-small
+        margin-left: 115px
+        .name
+          display: block
+          color: $dark_gray
+          margin: 0px
+          font-size: $font-size-normal
+          line-height: $line-height-normal
+        .meta
+          span
+            white-space: nowrap
+            strong
+              color: $dark_gray
+        .description
+          display: block
+          margin: 0px
 
-.main
-  padding: 0px 20px
-  .callout, .sponsors
+.summary
+  .callout
     font-size: $font-size-small
-    font-weight: $font-weight-bold
-    padding-top: 25px
-    .centered
-      text-align: center
-    .justified
-      text-align: justify
-  h1.logo
-    margin: 0
-    text-align: center
-    font-size: $font-size-xlarge
+    text-align: justify
 
 #sponsors
+  text-align: center
   h4
     padding: 0
     margin: 0 0 20px 0
   .sponsor
-    width: 80px
-    background-color: $white
-    @include border_radius($radius-size)
-    margin-bottom: 20px
+    width: 120px
+    background-color: $off-white
+    padding: 10px
+    +border_radius(10px)
+    margin: 10px
+    &:hover
+      +single-box-shadow(#999)
 
 #about
   background-color: $white

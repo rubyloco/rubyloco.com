@@ -11,6 +11,7 @@ class PhotosView
           @add_photo(photo) for photo in data.results
 
   add_photo: (photo) ->
+    photo.date = moment(photo.created).format('MMM DD, YYYY')
     $("#photos").append @template(photo)
 
 $ ->
