@@ -19,74 +19,67 @@
     <![endif]-->
   </head>
   <body>
-    <div class='row-fluid'>
-      <div class='span3 offset1'>
-        <div class='main'>
-          <h1 class='logo'>Ruby LoCo</h1>
+    <div class='container'>
+      <div class='row row-fluid'>
+        <div class='span3 summary'>
+          <h1 class='text-center'>Ruby LoCo</h1>
           <img id="rubyloco-logo" src="https://secure.gravatar.com/avatar/39ea1010c60a77fc681b38fdbee13556?s=420" />
-          <div class='callout'>
-            <p class='justified' id='callout'>
-              Ruby LoCo is a group of rubyists based out of Loudoun County, Virginia.  We meet on the second Monday and the last Friday of every month.  Come on out and join us!
-            </p>
-            <div class='centered'>
-              <a href="https://twitter.com/ruby_loco" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ruby_loco on twitter</a></p>
-              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <p class='callout'>
+            Ruby LoCo is a group of rubyists based out of Loudoun County, Virginia.  We meet on the second Monday and the last Friday of every month.  Come on out and join us!
+          </p>
+          <div class='text-center'>
+            <a href="https://twitter.com/ruby_loco" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ruby_loco on twitter</a></p>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          </div>
+        </div>
+        <div class='span7 list-block'>
+          <h3 class='list-header'>
+            <i class='icon-bullhorn icon-large icon-fixed-width'></i>
+            Upcoming Events
+          </h3>
+          <div class='list-body' id='events'></div>
+          <script id='event-template' type='text/x-handlebars-template'>
+            <div class='event'>
+                  <a class="thumb" href="{{event_url}}"><img src='{{thumb_src}}'>
+              </a>
+          
+              <div class='event-details'>
+                <h2 class='name'>
+                  <a class='event-name' href='{{event_url}}'>{{name}}</a>
+                </h2>
+                <a class='btn btn-primary rsvp' href='{{event_url}}'>RSVP</a>
+                <div class='description'>{{description}}</div>
+                <div class='meta'>
+                  <span>when: <strong>{{date}}</strong></span>
+                  |
+                  <span>where: <strong>{{venue.name}}</strong></span>
+                  |
+                  <span>attending: <strong>{{yes_rsvp_count}}</strong></span>
+                </div>
+              </div>
             </div>
+          </script>
+        </div>
+        <div class='span2'>
+          <div id='sponsors'>
+            <h2>Sponsors</h2>
           </div>
         </div>
       </div>
-      <div class='list-block span6'>
-        <h3 class='list-header'>Upcoming Events</h3>
-        <div class='list-body' id='events'>
-          <ul></ul>
-        </div>
-      </div>
-      <script id='event-template' type='text/x-handlebars-template'>
-        <li class='event'>
-          <div class='thumb span1'>
-            <a class='event-thumb' href='{{event_url}}'>
-              <img src='{{thumb_src}}'>
-            </a>
-          </div>
-          <div class='event-details'>
-            <a class='event-name' href='{{event_url}}'>
-              <h2 class='name'>{{name}}</h2>
-            </a>
-            <description>{{description}}</description>
-            <div class='meta'>
-              <span>when: <strong>{{date}}</strong> |</span>
-              <span>where: <strong>{{venue.name}}</strong> |</span>
-              <span>attending: <strong>{{yes_rsvp_count}}</strong></span>
-            </div>
-          </div>
-          <div class='list-item-footer'></div>
-        </li>
-      </script>
-      <div class='list-block span1'>
-        <div id='sponsors'>
-          <h4>Sponsors</h4>
-        </div>
-      </div>
-      <div style='clear: both; display: block; height: 70px; width: 100%;'></div>
     </div>
-    <script id='sponsor-template' type='text/x-handlebars-template'>
-      <a href='{{url}}'>
-        <img class='sponsor' src='{{image_url}}'>
-      </a>
-    </script>
     <div class='navbar-fixed-bottom'>
       <div class='container'>
-        <div class='footer text-center muted'>
-          <p>
+        <div class='footer'>
+          <ul class='nav inline'>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/photos">Photos</a></li>
+          </ul>
+          <p class='copyright'>
             Ruby LoCo -
             Copyright &copy;
             2013
-            All rights reserved.
           </p>
-          <div class='nav'>
-            <a class="first" href="/photos">Photos</a>
-            <a href="/about">About</a>
-          </div>
         </div>
       </div>
     </div>
@@ -99,6 +92,11 @@
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
     //]]>
+    </script>
+    <script id='sponsor-template' type='text/x-handlebars-template'>
+      <a href='{{url}}'>
+        <img class='sponsor' data-html='true' data-placement='left' data-toggle='tooltip' src='{{image_url}}' title='&lt;strong&gt;{{name}}&lt;/strong&gt;&lt;br&gt;{{info}}'>
+      </a>
     </script>
   </body>
 </html>
