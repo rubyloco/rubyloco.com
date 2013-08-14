@@ -1,27 +1,22 @@
-%div.list-block.span6
-  %h3.list-header About #{data.site.name}
-  %div#about.list-body
-    %article.intro
-      %p
-        #{data.site.name} was formed in 2012 to gather the great Ruby minds of Loudoun County.  We welcome all technologists, but focus our group on discussions relating to Ruby, Rails, JavaScript, and other related web disciplines.
+%h3.list-header
+  %i.icon-lightbulb.icon-large.icon-fixed-width
+  About #{data.site.name}
+#about.list-body
+  %article.intro
+    %p
+      #{data.site.name} was formed in 2012 to gather the great Ruby minds of Loudoun County.  We welcome all technologists, but focus our group on discussions relating to Ruby, Rails, JavaScript, and other related web disciplines.
 
-      %p
-        #{data.site.name} meets twice a month.  We meet for hack night on the second Monday of each month at the #{link_to "BusyConf", "http://www.busyconf.com" } offices.  #{data.site.name} also meets for lunch and afternoon hacking on the last Friday of every month.
+    %p
+      #{data.site.name} meets twice a month.  We meet for hack night on the second Monday of each month at the #{link_to "BusyConf", "http://www.busyconf.com" } offices.  #{data.site.name} also meets for lunch and afternoon hacking on the last Friday of every month.
 
-      %p
-        #{link_to "Follow Us", "http://twitter.com/ruby_loco"} on Twitter for details about our next hack night and meetup.
+    %p
+      #{link_to "Follow Us", "http://twitter.com/ruby_loco"} on Twitter for details about our next hack night and meetup.
 
-      %h3 Organizers
+    %h4 Organizers
 
-      .members
-        - data.members.each do |member|
-          .member.span3
-            = image_tag "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(member.email)}", class: 'img-circle'
-            %div= member.name
-            %div= link_to "@#{member.twitter}", "http://twitter.com/#{member.twitter}"
-      %div{ style: "clear: both;"}
-
--content_for(:nav) do
-  .nav
-    =link_to "Photos", "/photos", :class => "first"
-    =link_to "Home", "/"
+    .members
+      - data.members.each do |member|
+        .span3.text-center.member
+          = image_tag "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(member.email)}", class: 'img-circle'
+          .name= member.name
+          .twitter= link_to "@#{member.twitter}", "http://twitter.com/#{member.twitter}"
