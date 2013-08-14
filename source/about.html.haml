@@ -12,11 +12,11 @@
     %p
       #{link_to "Follow Us", "http://twitter.com/ruby_loco"} on Twitter for details about our next hack night and meetup.
 
-    %h3 Organizers
+    %h4 Organizers
 
     .members
       - data.members.each do |member|
-        .member.span3
+        .span3.text-center.member
           = image_tag "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(member.email)}", class: 'img-circle'
           .name= member.name
           .twitter= link_to "@#{member.twitter}", "http://twitter.com/#{member.twitter}"
