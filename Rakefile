@@ -1,3 +1,4 @@
+require "bundler/setup"
 require "middleman-gh-pages"
 
 desc "Generates the site and runs local server while watching for changes"
