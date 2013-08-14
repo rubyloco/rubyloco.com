@@ -8,6 +8,7 @@ class SponsorsView
     $.ajax url,
         dataType: 'jsonp'
         success: (data) =>
+          $("#sponsors").empty()
           @add_sponsor sponsor for sponsor in data.results[0].sponsors
 
   add_sponsor: (sponsor) ->

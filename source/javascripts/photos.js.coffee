@@ -8,6 +8,7 @@ class PhotosView
     $.ajax url,
         dataType: 'jsonp'
         success: (data) =>
+          $("#photos").empty()
           @add_photo(photo) for photo in data.results
 
   add_photo: (photo) ->
