@@ -13,7 +13,7 @@ class EventsView
 
   add_event: (event) ->
     event.date = moment(event.time).format('MM/DD/YYYY h:mma')
-    event.description = event.description.replace(/<img\ssrc.+"><\/img>/, '')
+    event.description = event.description.replace(/<img\ssrc.+"(\s\/)?>(<\/img>)?/, '')
     event.description = event.description.replace(/\<(\/)?p\>/g, '')
     event.description = event.description.replace(/\<br(\s)?(\/)?\>/g, '')
     event.description = new Handlebars.SafeString(event.description)
