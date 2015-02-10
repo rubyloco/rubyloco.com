@@ -1,7 +1,6 @@
 $iconSpritePath: ''
 $iconWhiteSpritePath: ''
 @import bootstrap
-@import bootstrap/responsive
 
 @import compass
 @import colors
@@ -53,13 +52,18 @@ a:hover
   background-color: $dark_gray
   padding: 10px 0
   line-height: 20px
+  .navbar-nav
+    float: none !important
+    margin: 0 auto
+    display: table
+    table-layout: fixed
   .nav
     color: $white
-    margin: 0
     li
       margin: 0 10px
     a
       color: $white
+      padding: 0
       +unstyled-link
     a:hover
       background-color: transparent !important
@@ -69,6 +73,8 @@ h3.list-header
   background-color: $dark_gray
   margin-bottom: 0
   margin-top: 0
+  padding-top: 10px
+  padding-bottom: 10px
   padding-left: 20px
   +border-top-left-radius($radius-size)
   +border-top-right-radius($radius-size)

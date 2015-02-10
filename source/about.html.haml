@@ -16,7 +16,7 @@
 
     .members
       - data.members.each do |member|
-        .span3.text-center.member
+        .col-md-3.text-center.member
           = image_tag "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(member.email)}", class: 'img-circle'
           .name= member.name
           .twitter= link_to "@#{member.twitter}", "http://twitter.com/#{member.twitter}"
