@@ -12,7 +12,6 @@
     .event-details
       %h2.name
         %a{ href: "{{event_url}}", class: "event-name" } {{name}}
-      %a{ href: "{{event_url}}", class: "btn btn-primary rsvp" } RSVP
       .description {{description}}
       .meta
         %span when: <strong>{{date}}</strong>
@@ -20,3 +19,5 @@
         %span where: <strong>{{venue.name}}</strong>
         |
         %span attending: <strong>{{yes_rsvp_count}}</strong>
+      <br />
+      %a{ href: "{{event_url}}", class: "btn btn-block btn-primary rsvp" } RSVP
