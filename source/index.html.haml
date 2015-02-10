@@ -1,5 +1,5 @@
-%h3{class: "list-header", role: "main"}
-  %i{class: "icon-bullhorn icon-large icon-fixed-width", aria: {hidden: "true"}}
+%h3.list-header
+  %i.icon-bullhorn.icon-large.icon-fixed-width
   Upcoming Events
 #events.list-body
   .text-center.muted
@@ -8,11 +8,10 @@
 %script#event-template{ type: 'text/x-handlebars-template' }
   .event
     = link_to "{{event_url}}", class: "thumb" do
-      %img{ src: "{{thumb_src}}", alt: "Ruby Loco Skull Logo" }
+      %img{ src: "{{thumb_src}}" }
     .event-details
       %h2.name
-        %a{ href: "{{event_url}}", class: "event-name",   aria: { label: "{{name}} on {{date}}" }} {{name}}
-      %a{ href: "{{event_url}}", role: "button", class: "btn btn-primary rsvp",  aria: { label: "RSVP — {{name}} on {{date}}" } } RSVP
+        %a{ href: "{{event_url}}", class: "event-name" } {{name}}
       .description {{description}}
       .meta
         %span when: <strong>{{date}}</strong>
@@ -20,3 +19,5 @@
         %span where: <strong>{{venue.name}}</strong>
         |
         %span attending: <strong>{{yes_rsvp_count}}</strong>
+      <br />
+      %a{ href: "{{event_url}}", class: "btn btn-block btn-primary rsvp" } RSVP
