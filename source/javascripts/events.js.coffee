@@ -23,7 +23,7 @@ class EventsView
     $("#events").append @template(event)
 
   coming_soon: (time) ->
-    moment(time).isBefore(moment().add('months', 2))
+    moment(time).isBefore(moment().add(2, 'months'))
 
   thumb_src: (event) ->
     if event.name.indexOf("Lunch") > 0
