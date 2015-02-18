@@ -1,10 +1,10 @@
 %h3.list-header
-  %i.icon-camera-retro.icon-large.icon-fixed-width
+  %i{class: "icon-camera-retro icon-large icon-fixed-width", aria: {hidden: "true"}}
   Photos
-#photos.list-body
+%div{class: "list-body", id: "photos", role: "main"}
   .text-center.muted
     %i.icon-spinner.icon-spin.icon-jumbo
 
 %script#photo-template{ type: 'text/x-handlebars-template' }
-  %a{href: "{{highres_link}}" }
+  %a{href: "{{highres_link}}", aria: {label: "View High-Resolution Image"} }
     %img.photo{ src: "{{photo_link}}", data: { toggle: "tooltip", placement: "bottom", html: "true" }, title: "Uploaded on {{date}} by {{member.name}}" }

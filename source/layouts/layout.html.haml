@@ -39,11 +39,11 @@
             .text-center.muted
               %i.icon-spinner.icon-spin.icon-jumbo
 
-    .navbar-fixed-bottom.footer.text-center
-      %ul.nav.inline
-        %li=link_to "Home", "/"
-        %li=link_to "About", "/about"
-        %li=link_to "Photos", "/photos"
+    %div{role: "navigation", class: "navbar-fixed-bottom footer text-center"}
+      %ul{role: "menu", class: "nav inline"}
+        %li{role: "menuitem"}=link_to "Home", "/"
+        %li{role: "menuitem"}=link_to "About", "/about"
+        %li{role: "menuitem"}=link_to "Photos", "/photos"
 
     = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"
     = javascript_include_tag "all.js"
@@ -51,4 +51,4 @@
 
     %script#sponsor-template{ type: 'text/x-handlebars-template' }
       %a{href: "{{url}}" }
-        %img.sponsor{ src: "{{image_url}}", data: { toggle: "tooltip", placement: "left", html: "true" }, title: "<strong>{{name}}</strong><br>{{info}}" }
+        %img.sponsor{ src: "{{image_url}}", alt: "{{name}} logo", data: { toggle: "tooltip", placement: "left", html: "true" }, title: "<strong>{{name}}</strong><br>{{info}}" }
