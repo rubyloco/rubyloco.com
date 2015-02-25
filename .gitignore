@@ -2,5 +2,6 @@
 /build
 /.sass-cache
 /vendor/ruby
+/vendor/bundle
 /tmp
 .rvmrc
