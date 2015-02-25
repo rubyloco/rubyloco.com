@@ -1,5 +1,5 @@
 %h3.list-header
-  %i.icon-lightbulb.icon-large.icon-fixed-width
+  %i{class: "icon-lightbulb icon-large icon-fixed-width", aria: {hidden: "true"}}
   About #{data.site.name}
 #about.list-body
   %article.intro
@@ -12,11 +12,11 @@
     %p
       #{link_to "Follow Us", "http://twitter.com/ruby_loco"} on Twitter for details about our next hack night and meetup.
 
-    %h4 Organizers
+    %h4#organizers Organizers
 
     .members
       - data.members.each do |member|
-        .span3.text-center.member
-          = image_tag "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(member.email)}", class: 'img-circle'
+        %div{class: "span3 text-center member", aria: {labelledby: "organizers"}}
+          = image_tag "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(member.email)}", class: 'img-circle', alt: "Photo of #{member.name}"
           .name= member.name
-          .twitter= link_to "@#{member.twitter}", "http://twitter.com/#{member.twitter}"
+          .twitter= link_to "@#{member.twitter}", "http://twitter.com/#{member.twitter}", aria: {label: "View #{member.name} on Twitter as @#{member.twitter}"}
